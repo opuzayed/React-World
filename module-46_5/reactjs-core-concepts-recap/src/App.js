@@ -4,15 +4,23 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <District></District>
+      <District name = 'noakhali' specila = 'backbitting'></District>
+      <District name = 'bramonbaria' special = 'fighting'></District>
+      <District name = 'cumilla' special = 'itor'></District>
     </div>
   );
 }
-function District(){
+const districtStyle = {
+  backgroundColor : 'gray',
+  color : 'green',
+  borderRadius : '10px',
+  margin : '20px'
+}
+function District(props){
   return(
-    <div>
-      <h2>Name : </h2>
-      <p>Speciality : </p>
+    <div style = { districtStyle}>
+      <h2>Name : { props.name} </h2>
+      <p>Speciality : { props.special} </p>
     </div>
   )
 }
