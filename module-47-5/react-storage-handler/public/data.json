@@ -1,0 +1,32 @@
+[
+    {
+      "id": "632eceb9b7887aef1da771eb",
+      "price": 74,
+      "name": "Blackburn Clements",
+      "gender": "male"
+    },
+    {
+      "id": "632eceb90dfacf3cdf0f931d",
+      "price": 190,
+      "name": "Ramos Owen",
+      "gender": "male"
+    },
+    {
+      "id": "632eceb937d3197e6126ea6e",
+      "price": 325,
+      "name": "Bryant Montoya",
+      "gender": "male"
+    },
+    {
+      "id": "632eceb9de61ef9131140209",
+      "price": 167,
+      "name": "Bowers Shelton",
+      "gender": "male"
+    },
+    {
+      "id": "632eceb91b883d05313847de",
+      "price": 85,
+      "name": "Mcgee Rocha",
+      "gender": "male"
+    }
+  ]
