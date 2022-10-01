@@ -12,14 +12,14 @@ const Pricing = () => {
             'halum features'
         ]},
         {id : 2, name : 'medium', price : 9.99, featues : [
-            'awesome features',
+            'everything on free',
             'naughty features',
             'dusto features',
             'amul features',
             'halum features'
         ]},
         {id : 3, name : 'platinum', price : 19.99, featues : [
-            'awesome features',
+            'Everything on platinum',
             'naughty features',
             'dusto features',
             'amul features',
@@ -29,7 +29,7 @@ const Pricing = () => {
     return (
         <div>
             <h2 className='text-6xl font-bold bg-indigo-400 p-12 text-white'>Best deal of the town</h2>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid md:grid-cols-3 gap-3 mt-4'>
             {
                 pricingOptions.map(option => <PriceOption
                 key={option.id}
