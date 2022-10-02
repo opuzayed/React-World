@@ -16,7 +16,7 @@ function App() {
     ]},
     
     {path:'/about', element:<About></About>},
-   
+    {path:'*', element:<div>'route not found'</div>}
   ])
   return (
     <div className="App">
