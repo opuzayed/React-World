@@ -11,6 +11,7 @@ const Post = ({post}) => {
         <div className='post'>
             <p>{title}</p>
             <p><small>{body}</small></p>
+            <Link to={`/post/${id}`}>Link:{id}</Link>
             <Link to={`/post/${id}`}><button>Show Details</button></Link>
             <button onClick={handleNavigate}>Show Details2</button>
         </div>
