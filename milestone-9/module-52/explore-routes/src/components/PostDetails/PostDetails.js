@@ -1,12 +1,19 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const PostDetails = () => {
     const post = useLoaderData();
-    const {id} = post;
+    const {id, title, body, userId} = post;
+    const navigate = useNavigate();
+    const handleNavigate = () =>{
+        navigate(`/friend/${userId}`);
+    }
     return (
         <div>
             <h2>This is about post-Details : {id}</h2>
+            <p>Title : {title}</p>
+            <p><small>{body}</small></p>
+            <button onClick={handleNavigate}>Get The Author</button>
         </div>
     );
 };
