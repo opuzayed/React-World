@@ -30,7 +30,7 @@ function App() {
       {
         path:'/posts', 
         loader: async() =>{
-          return fetch('https://jsonplaceholder.typicode.com/posts')
+          return fetch('https://jsonplaceholder.typicode.com/posts');
         },
         element:<Posts></Posts>
       }
