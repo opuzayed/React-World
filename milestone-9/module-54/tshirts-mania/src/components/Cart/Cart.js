@@ -6,6 +6,16 @@ const Cart = ({cart, handleRemoveItem}) => {
     {
         message = <p>Please buy at least one item!!!</p>
     }
+    else if(cart.length === 1){
+        message = <div>
+            <h2>Amar jonno ekta</h2>
+            <p>tomer jonno ekta</p>
+            <h3>amar jonno rekta</h3>
+        </div>
+    }
+    else{
+        message = <p>Thanks for buying</p>
+    }
     return (
         <div>
             <h3>Order Summary</h3>
@@ -20,6 +30,9 @@ const Cart = ({cart, handleRemoveItem}) => {
             }
             {
                 message
+            }
+            {
+                cart.length === 3 ? <p>Ora tin jon</p> : <p>tin jon na</p>
             }
         </div>
     );
