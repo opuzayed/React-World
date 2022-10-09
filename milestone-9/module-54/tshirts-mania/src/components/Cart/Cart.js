@@ -32,7 +32,7 @@ const Cart = ({cart, handleRemoveItem}) => {
                 message
             }
             {
-                cart.length === 3 ? <p>Ora tin jon</p> : <p>tin jon na</p>
+                cart.length === 3 ? <p>Ora tin jon ekshathe.</p> : <p>tin jon na</p>
             }
         </div>
     );
