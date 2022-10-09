@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layout/Main';
 import Home from './components/Home/Home';
 import Orders from './components/Orders/Orders';
+import Grandpa from './components/Grandpa/Grandpa';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ function App() {
       },
       {
         path:'*', element:<div>Oops!definition not found</div>
+      },
+      {
+        path:'grandpa',
+        element:<Grandpa></Grandpa>
       }
     ]
     
