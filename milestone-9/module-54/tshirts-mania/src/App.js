@@ -12,13 +12,18 @@ function App() {
     children:[
       {
         path:'/',
+        loader:()=> fetch('tshirts.json'),
         element:<Home></Home>
       },
       {
         path:'orders',
         element:<Orders></Orders>
+      },
+      {
+        path:'*', element:<div>Oops!definition not found</div>
       }
     ]
+    
   }
   ])
   return (
