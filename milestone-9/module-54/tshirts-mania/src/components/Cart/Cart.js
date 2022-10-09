@@ -37,7 +37,9 @@ const Cart = ({cart, handleRemoveItem}) => {
             {
                 cart.length === 2 && <p>Double items</p>
             }
-            
+            {
+                cart.length === 4 || <p>charta item na</p>
+            }
         </div>
     );
 };
