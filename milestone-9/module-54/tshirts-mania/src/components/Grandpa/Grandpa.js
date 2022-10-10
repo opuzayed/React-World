@@ -10,7 +10,7 @@ const Grandpa = () => {
   const ring = "diamond ring"; */
   const [house, setHouse] = useState(1);
   return (
-    <RingContext.Provider value = 'Dadi Ring'>
+    <RingContext.Provider value = {[house, setHouse]}>
       <div className="grandpa">
         <h2>Grandpa</h2>
         <section className="flex">
