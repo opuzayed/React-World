@@ -5,12 +5,15 @@ import Uncle from "../Uncle/Uncle";
 import "./Grandpa.css";
 
 export const RingContext = createContext("Matir Ring");
+export const MoneyContext = createContext(400);
 const Grandpa = () => {
  /*  const house = 7;
   const ring = "diamond ring"; */
   const [house, setHouse] = useState(1);
+  const [money, setMoney] = useState(500);
   return (
     <RingContext.Provider value = {[house, setHouse]}>
+      <MoneyContext.Provider value={[money, setMoney]}>
       <div className="grandpa">
         <h2>Grandpa</h2>
         <section className="flex">
@@ -19,6 +22,7 @@ const Grandpa = () => {
           <Aunty house={house}></Aunty>
         </section>
       </div>
+      </MoneyContext.Provider>
     </RingContext.Provider>
   );
 };
