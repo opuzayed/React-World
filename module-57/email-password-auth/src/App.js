@@ -18,7 +18,7 @@ function App() {
     console.log(event.target.value);
   }
   return (
-    <div className="App">
+    <div className="">
      <RegisterReactBootstrap></RegisterReactBootstrap>
     </div>
   );
