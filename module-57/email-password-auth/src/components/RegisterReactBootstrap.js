@@ -1,6 +1,10 @@
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import app from '../firebase/firebase.init';
+
+const auth = getAuth(app);
 
 const RegisterReactBootstrap = () => {
     const handleRegister = event => {
@@ -8,6 +12,14 @@ const RegisterReactBootstrap = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
+        createUserWithEmailAndPassword(auth,email,password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
+            console.log('error', error);
+        });
     }
     const handleRegisterBlur = event => {
         const email = event.target.value;
