@@ -6,12 +6,17 @@ const auth = getAuth(app);
 function App() {
   const handleRegister = event =>{
     event.preventDefault();
-    console.log(event.target);
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log(email,password);
+  }
+  const handleEmailChange = event =>{
+    console.log(event.target.value);
   }
   return (
     <div className="App">
       <form onSubmit={handleRegister}>
-        <input type="email" name="email" id="" placeholder='Enter your email'/>
+        <input onChange={handleEmailChange} type="email" name="email" id="" placeholder='Enter your email'/>
         <br />
         <input type="password" name="password" id="" placeholder='Enter your password'/>
         <br />
