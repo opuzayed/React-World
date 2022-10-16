@@ -7,11 +7,14 @@ import app from '../firebase/firebase.init';
 const auth = getAuth(app);
 
 const RegisterReactBootstrap = () => {
-    const [passwordError, setPasswordError] = useState(''); 
+    const [passwordError, setPasswordError] = useState('');
+    const [success, setSuccess] = useState(false); 
     const handleRegister = event => {
         event.preventDefault();
-        const email = event.target.email.value;
-        const password = event.target.password.value;
+        setSuccess(false);
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
         console.log(email, password);
         if(!/(?=(.*[A-Z]){2})/.test(password))
         {
@@ -33,9 +36,12 @@ const RegisterReactBootstrap = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setSuccess(true);
+            form.reset();
         })
         .catch(error => {
             console.log('error', error);
+            setPasswordError(error.message);
         });
     }
     const handleRegisterBlur = event => {
@@ -57,8 +63,10 @@ const RegisterReactBootstrap = () => {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control onBlur={handlePasswordBlur}type="password" name='password' placeholder="Password" required/>
-        <p className='text-danger'>{passwordError}</p>
+        
       </Form.Group>
+      <p className='text-danger'>{passwordError}</p>
+      {success && <p className='text-success'>User Register Successfully</p>}
       <Button variant="primary" type="submit">
         Register
       </Button>
