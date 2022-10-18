@@ -4,9 +4,10 @@ import { AuthContext } from '../contexts/UserContext';
 
 const Home = () => {
     const {user} = useContext(AuthContext);
+    console.log(user);
     return (
         <div>
-            home{user.email}
+        {/* {user.email} */}
         </div>
     );
 };
