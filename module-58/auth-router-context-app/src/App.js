@@ -15,7 +15,7 @@ function App() {
       children:[
         {
           path:'/',
-          element:<Home></Home>
+          element:<PrivateRoutes><Home></Home></PrivateRoutes>
         },
         {
           path:'/orders',

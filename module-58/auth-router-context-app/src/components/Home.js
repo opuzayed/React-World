@@ -7,7 +7,8 @@ const Home = () => {
     console.log(user);
     return (
         <div>
-        {/* {user.email} */}
+        {/* {user.email} */} 
+        <h2>this is home</h2>
         </div>
     );
 };
