@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Footer from "../Pages/Shared/Footer/Footer";
 import Header from "../Pages/Shared/Header/Header";
@@ -10,7 +10,7 @@ const Main = () => {
   return (
         <div>
             <Header></Header>
-        <container>
+        <Container>
             <Row>
             <Col lg='2'>
                 <LeftSideNav></LeftSideNav>
@@ -22,7 +22,7 @@ const Main = () => {
                 <RightSideNav></RightSideNav>
             </Col>
             </Row>
-        </container>
+        </Container>
         <Footer></Footer> 
         </div>
   );
