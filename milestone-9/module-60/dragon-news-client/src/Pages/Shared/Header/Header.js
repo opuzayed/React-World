@@ -9,9 +9,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import RightSideNav from '../RightSideNav/RightSideNav';
-
+import Button from 'react-bootstrap/Button';
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+      logOut()
+      .then(() =>{})
+      .catch(error => console.error(error))
+  }
   console.log(user);
     return (
         <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -35,14 +41,27 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            <Nav.Link href="#deets">
+              {
+                user?.uid ?
+                <>
+                  <span>{user?.displayName}</span>
+                  <Button variant="light" onClick={handleLogOut}>Logout</Button>
+                </>
+                :
+               <>
+                  <Link to='/login'>Login</Link>
+                  <Link to='/register'>Register</Link>
+               </>
+              }
+              </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               {
                 user?.photoURL ?
                 <Image
                 style={{height : '30px'}}
                 roundedCircle
-                src={user.photoURL}
+                src={user?.photoURL}
                 >
                 </Image>
                 :
