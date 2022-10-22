@@ -12,6 +12,7 @@ import RightSideNav from '../RightSideNav/RightSideNav';
 
 const Header = () => {
   const {user} = useContext(AuthContext);
+  console.log(user);
     return (
         <Navbar className='mb-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -37,7 +38,7 @@ const Header = () => {
             <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               {
-                user.photoURL ?
+                user?.photoURL ?
                 <Image
                 style={{height : '30px'}}
                 roundedCircle
